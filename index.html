@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chemistry Equation Balancer</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <h1>Chemistry Equation Balancer</h1>
+    <p class="sub">Type something like <code>Fe + O2 -> Fe2O3</code>. It gives the smallest whole-number coefficients.</p>
+
+    <div class="note">
+      What it does: balances <b>neutral</b> equations by mass only. Works with parentheses and hydrates (<code>·</code> or <code>.</code>).<br>
+      What it does <b>not</b> do: ions/charges, electrons, acidic/basic redox, state labels, multiple arrows.<br>
+      Who this is for: intro chem (Gr 9–10). Probably not enough for most Gr 11–12/AP/IB.
+    </div>
+
+    <div class="card">
+      <label for="eq">Unbalanced equation</label>
+      <input id="eq" type="text" placeholder="e.g. C3H8 + O2 -> CO2 + H2O" />
+
+      <div class="bar">
+        <div class="left">
+          <button id="bal">Balance</button>
+          <button id="clr">Clear</button>
+        </div>
+        <div class="right">
+          <button id="ex1">Example 1</button>
+          <button id="ex2">Example 2</button>
+          <button id="ex3">Example 3</button>
+        </div>
+      </div>
+
+      <div id="out" class="out"></div>
+
+      <details>
+        <summary>How it works (short)</summary>
+        <ul>
+          <li>Counts elements in each formula (handles nested () and hydrates).</li>
+          <li>Makes a matrix for left vs right and solves one nullspace vector.</li>
+          <li>Scales to the smallest integers. Use one <code>-></code> and <code>+</code> between items.</li>
+        </ul>
+      </details>
+
+      <p class="foot">Tip: remove things like <code>(aq)</code> and don’t type leading numbers like <code>2H2O</code> in the input.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
