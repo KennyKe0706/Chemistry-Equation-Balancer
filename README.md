@@ -1,4 +1,5 @@
 # Chemistry Equation Balancer
+<img width="867" height="504" alt="截屏2025-10-02 下午7 24 20" src="https://github.com/user-attachments/assets/ea1c1b2e-1bdb-4acd-81e6-962e815a3062" />
 
 Small web page that balances **neutral** equations by **mass only**. No libraries. Open `index.html` in a browser.
 
